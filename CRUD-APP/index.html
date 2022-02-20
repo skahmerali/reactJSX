@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sign Up </title>
+    <!-- App Icon Link -->
+    <link rel="icon" href="Images/Logo.png" />
+    <!-- Linking to Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="App Files/style.css" type="text/css" />
+</head>
+
+<body>
+    <!-- Father Container -->
+    <div id="father-container">
+
+        <!-- Main Container -->
+        <div class="container" id="registeration-container">
+
+            <!-- Headers -->
+            <h1 id="registration-header"> Classifed App (CRUD Operations) </h1>
+            <h2 id="signup-header"> Sign Up </h2>
+
+            <!-- Custom Alert -->
+            <div class="alert alert-warning" role="alert" id="custom-error">
+                You have Signed Up Successfully!
+            </div>
+
+            <!-- Input Fields Container -->
+
+            <!-- Name Container -->
+            <div class="input-group mb-3" id="inputfield-container">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"> Name : </span>
+                </div>
+                <input type="text" id="userName" class="form-control" placeholder="Name" aria-label="email"
+                    aria-describedby="basic-addon1" title="Enter Youe Name" autofocus />
+            </div>
+
+            <!-- Email Container -->
+            <div class="input-group mb-3" id="inputfield-container">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"> Email : </span>
+                </div>
+                <input type="text" id="email" class="form-control" placeholder="name@company.com" aria-label="email"
+                    aria-describedby="basic-addon1" title="Enter Youe Email" />
+            </div>
+
+            <!-- Password Container -->
+            <div class="input-group mb-3" id="inputfield-container">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"> Password : </span>
+                </div>
+                <input type="password" id="password" class="form-control" placeholder="*****" aria-label="password"
+                    aria-describedby="basic-addon1" title="Enter Youe Password" />
+            </div>
+
+            <!-- Profile Pic Container -->
+            <div id="profile-pic-container">
+                <input type="file" id="image-tag" class="form-control" aria-label="file"
+                    aria-describedby="basic-addon1" />
+            </div>
+
+            <p id="btn-container">
+                <button onclick="signUp()" class="btn btn-primary" id="signup-btn"> Sign Up </button>
+                <span id="gape"> Or </span>
+                <a href="App Files/login.html" id="connect-tag"> Already Sign In </a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Linking to Firebase Database -->
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+
+    <!-- Linking to Firebase Storage -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-storage.js"></script>
+
+    <!-- Linking to Firebase Project -->
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD9_5rhte0o0i_1HJlS_-dQ_mnVMa0fh6I",
+            authDomain: "classifed-todo-application.firebaseapp.com",
+            databaseURL: "https://classifed-todo-application.firebaseio.com",
+            projectId: "classifed-todo-application",
+            storageBucket: "classifed-todo-application.appspot.com",
+            messagingSenderId: "893762080705",
+            appId: "1:893762080705:web:5e025909bd2aeba04ce940",
+            measurementId: "G-X1GCTFRD8B"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- Linking to Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <!-- External JavaScript File -->
+    <script src="App Files/app.js"></script>
+</body>
+
+</html>

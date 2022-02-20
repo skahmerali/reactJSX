@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Your Profile </title>
+    <!-- App Icon Link -->
+    <link rel="icon" href="../Images/Logo.png" />
+    <!-- Linking To Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="app.css" type="text/css" />
+</head>
+
+<body onload="getCurrentUserDataInRealTime()">
+
+    <!-- Main Container -->
+    <div class="container" id="main-container">
+
+        <!-- Log Out Button Area -->
+        <p id="logout-btn-container">
+            <button class="btn btn-primary" id="logout-btn" onclick="logOut()" title="Click here to Log Out"> Log Out
+            </button>
+        </p>
+
+        <!-- App Header -->
+        <h1 id="header"> -: Classified App (CRUD Operations) :- </h1>
+
+        <!-- Profile Pic / DP Container -->
+        <div id="profile-image-container">
+            <img src="../Images/UserLogo.png" title="Profile Image" alt="profile-pic" id="dp" />
+        </div>
+
+        <!-- Nav Bar -->
+        <div id="nav-bar">
+            <span id="nav-tag">
+                <a href="#" class="nav-link"> <span id="profile-name"></span> </a>
+            </span>
+            <span id="nav-tag">
+                <a href="timeline.html" class="nav-link"> Timeline </a>
+            </span>
+        </div>
+
+        <!-- Create Post Area -->
+        <div id="post-container">
+            <h2 id="post-header"> Sale Your Laptop </h2>
+
+            <!-- Custom Error Alert Box -->
+            <div class="alert alert-warning" role="alert" id="custom-error"></div>
+
+            <div class="input-group mb-3" id="inputfield-container">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"> Laptop Name : </span>
+                </div>
+                <input type="text" id="laptop-name" class="form-control" placeholder="HP"
+                    aria-describedby="basic-addon1" autofocus />
+            </div>
+
+            <div class="input-group mb-3" id="inputfield-container">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"> Laptop Model : </span>
+                </div>
+                <input type="text" id="laptop-model" class="form-control" placeholder="Core I5"
+                    aria-describedby="basic-addon1" />
+            </div>
+
+            <div class="input-group mb-3" id="inputfield-container">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"> Laptop RAM : </span>
+                </div>
+                <input type="text" id="laptop-ram" class="form-control" placeholder="8 GB"
+                    aria-describedby="basic-addon1" />
+            </div>
+
+            <div class="input-group mb-3" id="inputfield-container">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"> Laptop Hard Disk Drive : </span>
+                </div>
+                <input type="text" id="laptop-hdd" class="form-control" placeholder="500 GB"
+                    aria-describedby="basic-addon1" />
+            </div>
+
+            <div class="input-group mb-3" id="inputfield-container">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"> Laptop Solid State Drive (SSD) : </span>
+                </div>
+                <input type="text" id="laptop-ssd" class="form-control" placeholder="128 GB"
+                    aria-describedby="basic-addon1" />
+            </div>
+
+            <div class="input-group mb-3" id="inputfield-container">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"> Laptop Price : </span>
+                </div>
+                <input type="text" id="laptop-price" class="form-control" placeholder="30 Thousands"
+                    aria-describedby="basic-addon1" />
+            </div>
+
+            <!-- Product Image Conatiner -->
+            <div class="input-group mb-3" id="inputfield-container">
+                <input type="file" id="laptop-image" class="form-control" aria-label="file"
+                    aria-describedby="basic-addon1" />
+            </div>
+
+            <!-- Submit Post Buttom -->
+            <p id="btn-container">
+                <button onclick="addItem()" id="add-item" class="btn btn-primary"> Add Item </button>
+            </p>
+        </div>
+
+        <!-- Show Post Container -->
+        <div id="show-data-container"></div>
+        <hr />
+    </div>
+
+    <!-- Linking to Firebase Database -->
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+
+    <!-- Linking to Firebase Storage -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-storage.js"></script>
+
+    <!-- Linking to Firebase Project -->
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD9_5rhte0o0i_1HJlS_-dQ_mnVMa0fh6I",
+            authDomain: "classifed-todo-application.firebaseapp.com",
+            databaseURL: "https://classifed-todo-application.firebaseio.com",
+            projectId: "classifed-todo-application",
+            storageBucket: "classifed-todo-application.appspot.com",
+            messagingSenderId: "893762080705",
+            appId: "1:893762080705:web:5e025909bd2aeba04ce940",
+            measurementId: "G-X1GCTFRD8B"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- Linking to Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <!-- External JavaScript File -->
+    <script src="home.js"></script>
+</body>
+
+</html>

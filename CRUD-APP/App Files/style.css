@@ -1,0 +1,156 @@
+/***** Classified App (CRUD Operations) ******/
+
+body {
+    background-image: url("../Images/Cover.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Sign Up and Log In Area */
+
+#father-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#registeration-container {
+    border: 5px double darkblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#registration-header {
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+    margin-top: 20px;
+}
+
+#signup-header , #password-reset-header {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#password-reset-header {
+    font-weight: normal;
+}
+
+#inputfield-container {
+    border: 2px solid darkblue;
+    border-radius: 5px;
+}
+
+.input-group-text {
+    color: blue;
+    width: 125px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#userName , #email , #password , #login-email , #login-password , #reset_email {
+    color: blue;
+    outline: 0;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: white;
+}
+
+#signup-btn , #login-btn {
+    width: 100px;
+    font-weight: bold;
+    outline: 0;
+    border: 2px solid white;
+}
+
+#signup-btn:hover , #login-btn:hover {
+    color: darkblue;
+    background-color: white;
+    border: 2px solid darkblue;
+}
+
+#reset-password-btn {
+    width: 150px;
+    font-weight: bold;
+    outline: 0;
+    border: 2px solid white;
+}
+
+#reset-password-btn:hover {
+    color: darkblue;
+    background-color: white;
+    border: 2px solid darkblue;
+}
+
+#btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-last-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#custom-error {
+    border: 2px solid darkred;
+    font-weight: bold;
+    font-size: 20px;
+    display: none;
+}
+
+#gape {
+    color:  white;
+    font-weight: bold;
+    margin: 5px;
+}
+
+#reset-password-el , #connect-tag {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#reset-password-el:hover , #connect-tag:hover {
+    text-decoration: underline;
+    color: darkblue;
+}
+
+/* Profile Pic Container */
+#profile-pic-container {
+    border: 2px solid darkblue;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+#image-tag {
+    color: darkblue;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding-bottom: 40px;
+}
+
+/* Sign Up and Log In and Reset-Password Work Completed */

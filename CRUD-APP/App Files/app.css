@@ -1,0 +1,235 @@
+/***** Classified App (CRUD Operations) ******/
+
+/* Main App Styling File */
+
+body {
+    background-image: url("../Images/AnotherCover.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Main Container */
+#main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+#header {
+    color: darkblue;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 15px;
+}
+
+/* Nav Bar */
+#nav-bar {
+    border: 2px solid darkblue;
+    border-radius: 5px;
+    width: 100%;
+    background-color: blue;
+    display: flex;
+}
+
+#nav-tag {
+    color: white;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#nav-tag a {
+    color: white;
+}
+
+#nav-tag:hover a {
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+/* Create Post Container */
+#post-container {
+    border: 5px double darkblue;
+    margin: 10px 0px 10px 0px;
+}
+
+#post-header {
+    color: darkblue;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 20px;
+}
+
+#inputfield-container {
+    border: 2px solid darkblue;
+    border-radius: 5px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.input-group-text {
+    color: blue;
+    width: 280px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#laptop-name , #laptop-model , #laptop-ram , #laptop-hdd , #laptop-ssd , #laptop-price{
+    color: blue;
+    outline: 0;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: white;
+}
+
+#btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#logout-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#logout-btn {
+    width: 120px;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+    border: 2px solid darkred;
+}
+
+#logout-btn:hover {
+    color: darkred;
+    background-color: white;
+    border: 2px solid red;
+}
+
+#add-item {
+    font-weight: bold;
+    border: 2px solid darkblue;
+}
+
+#add-item:active {
+    color: darkblue;
+    background-color: white;
+    border: 2px solid blue;
+}
+
+#custom-error {
+    width: 400px;
+    margin: 0 auto;
+    font-weight: bold;
+    border: 2px solid darkred;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: none;
+}
+
+/* Profile Pic Area */
+
+#profile-image-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#dp {
+    height: 250px;
+    width: 250px;
+    border: 5px double white;
+    border-radius: 20px;
+}
+
+/* Product Image Area */
+#product-image-container {
+    border: 2px solid darkblue;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+#laptop-image {
+    color: darkblue;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding-bottom: 42px;
+    cursor: pointer;
+}
+
+/* Show Post Area */
+
+/* Show Post In Current User Profile Area */
+
+.inner-container {
+    border: 5px double blueviolet;
+    margin: 20px 0px 0px 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: lightskyblue;
+}
+
+#list-head {
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 10px;
+    color: darkblue;
+}
+
+.inner-container li {
+    font-weight: bold;
+    font-size: 18px;
+    color: darkblue;
+    background-color: lightskyblue;
+}
+
+.inner-container button {
+    font-weight: bold;
+    width: 100px;
+    border: 2px solid darkblue;
+    margin: 20px 10px 10px 10px;
+}
+
+.inner-container button:hover {
+    color: darkblue;
+    background-color: white;
+    border: 2px solid darkblue;
+}
+
+/* Showing Product Image Area */
+#product-image {
+    height: 200px;
+    width: 200px;
+    border: 2px solid darkblue;
+    border-radius: 10px;
+}
+
+#product-image-paremt {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Timeline / Home Page / Current User Profile Page Work Completed */

@@ -1,0 +1,24 @@
+/* .background {
+    margin: 0% auto;
+    background-color: bisque;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    font-size: 80px;
+} */
+.main{
+    width: 100%;
+    background-color: black;
+    height: 1000px;
+}
+.body{
+    width: 40%;
+    margin: 0% auto;
+    background-color: white;
+    height: 700px;
+    text-align: center;
+}
+.head{
+    width: 100%;
+    background-color: rgb(156, 112, 156);
+}
